@@ -184,7 +184,7 @@ body {
   right: -1200px;
   width: 100%;
   height: 100%;
-  background-image: url("../images/bg_1.png");
+  background-image: url("../images/bg_1.webp");
   background-repeat: no-repeat;
   opacity: 0.4;
   pointer-events: none;
@@ -290,7 +290,7 @@ body {
   left: -400px;
   width: 100%;
   height: 100%;
-  background-image: url("../images/bg_2.png");
+  background-image: url("../images/bg_2.webp");
   background-repeat: no-repeat;
   opacity: 0.3;
   pointer-events: none;
@@ -452,7 +452,7 @@ body {
   right: -1200px;
   width: 100%;
   height: 100%;
-  background-image: url(../images/bg_3.png);
+  background-image: url("../images/bg_3.webp");
   background-repeat: no-repeat;
   opacity: 0.3;
   pointer-events: none;
@@ -618,7 +618,7 @@ body {
 
 .pj_box.pj_box.pj_box:nth-child(2)::before {
   content: "";
-  background-image: url("../images/particle2.png");
+  background-image: url("../images/particle2.webp");
   background-size: contain; /* 또는 cover */
   background-repeat: no-repeat;
   width: 80px;
@@ -801,7 +801,7 @@ body._hidden,
   left: 60px;
   width: 168px;
   height: 168px;
-  background-image: url("../images/open_source_star.png");
+  background-image: url("../images/open_source_star.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top left;
@@ -990,7 +990,7 @@ body._hidden,
   rotate: 291deg;
   width: 100%;
   height: 142%;
-  background-image: url("../images/bg_4.png");
+  background-image: url("../images/bg_4.webp");
   background-repeat: no-repeat;
   opacity: 0.2;
   pointer-events: none;
@@ -1035,7 +1035,7 @@ body._hidden,
   z-index: 2;
   width: 160px;
   height: 130px;
-  background: url("../images/cotact-icon.png") no-repeat center center / cover;
+  background: url("../images/cotact-icon.webp") no-repeat center center / cover;
 }
 
 /* .footer */
