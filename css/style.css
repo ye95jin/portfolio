@@ -39,6 +39,7 @@ body {
     url("../font/Helvetica-Light.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @keyframes animate-image-in {
   0% {
