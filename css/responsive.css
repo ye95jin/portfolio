@@ -119,6 +119,7 @@
     width: 260%;
     left: -475px;
     bottom: -598px;
+	height: 158%;
   }
 
   /* skills */
@@ -320,8 +321,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background: url("../images/contact-icon.webp") no-repeat center center /
       cover;
   }
