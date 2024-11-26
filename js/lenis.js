@@ -10,4 +10,6 @@ function lenisAnimation() {
   }
 
   requestAnimationFrame(raf);
+
+  console.log("lenis 실행 중");
 }

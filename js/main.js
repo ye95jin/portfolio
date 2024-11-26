@@ -1,6 +1,8 @@
 window.addEventListener("load", function () {
   const lenis = new Lenis();
-  lenisAnimation();
+  if (window.innerWidth >= 1280) {
+    lenisAnimation();
+  }
   ui.init();
 
   // header 요소 선택
@@ -19,10 +21,8 @@ window.addEventListener("load", function () {
   // Lenis 루프 제어 함수
   function toggleLenis(enable) {
     if (enable) {
-
       lenis.start();
     } else {
-
       lenis.stop();
       lenis.raf();
     }
@@ -35,9 +35,12 @@ window.addEventListener("load", function () {
       const section = sections[index];
 
       // 특정 섹션의 경우 부모 .pin-spacer로 스크롤
-      const isPinnedSection = ["ABOUT", "SKILLS", "PROJECTS"].includes(navItem.textContent);
-      const scrollTarget = isPinnedSection ? section.closest(".pin-spacer") || section : section;
-
+      const isPinnedSection = ["ABOUT", "SKILLS", "PROJECTS"].includes(
+        navItem.textContent
+      );
+      const scrollTarget = isPinnedSection
+        ? section.closest(".pin-spacer") || section
+        : section;
 
       // 진행 중인 gsap 애니메이션 중단
       gsap.killTweensOf(window);
@@ -52,11 +55,10 @@ window.addEventListener("load", function () {
           scrollTo: { y: scrollTarget, autoKill: true },
           duration: 1,
           ease: "power3.out",
-          onStart: () => {
-          },
+          onStart: () => {},
           onComplete: () => {
             toggleLenis(true); // Lenis 루프 재시작
-          }
+          },
         });
       });
     });
@@ -68,14 +70,15 @@ window.addEventListener("load", function () {
       e.preventDefault();
       const section = sections[index];
       // 특정 섹션의 경우 부모 .pin-spacer로 스크롤
-      const isPinnedSection = ["ABOUT", "SKILLS", "PROJECTS"].includes(link.textContent);
-      const scrollTarget = isPinnedSection ? section.closest(".pin-spacer") || section : section;
-
-
+      const isPinnedSection = ["ABOUT", "SKILLS", "PROJECTS"].includes(
+        link.textContent
+      );
+      const scrollTarget = isPinnedSection
+        ? section.closest(".pin-spacer") || section
+        : section;
 
       // 진행 중인 gsap 애니메이션 중단
       gsap.killTweensOf(window);
-
 
       // Lenis 루프 비활성화
       toggleLenis(false);
@@ -102,12 +105,10 @@ window.addEventListener("load", function () {
           scrollTo: { y: scrollTarget, autoKill: true },
           duration: 1,
           ease: "power3.out",
-          onStart: () => {
-
-          },
+          onStart: () => {},
           onComplete: () => {
             toggleLenis(true); // Lenis 루프 재시작
-          }
+          },
         });
       });
     });
@@ -125,7 +126,7 @@ window.addEventListener("load", function () {
         onEnterBack: () => setActiveNav(index),
         onToggle: ({ isActive }) => {
           if (isActive) setActiveNav(index);
-        }
+        },
       });
     });
   };
@@ -135,7 +136,7 @@ window.addEventListener("load", function () {
     trigger: ".container",
     start: "top center",
     end: "bottom bottom",
-    onEnter: createSectionTriggers
+    onEnter: createSectionTriggers,
   });
 
   // 현재 활성화된 네비게이션 항목의 클래스를 설정하는 함수
@@ -154,13 +155,13 @@ window.addEventListener("load", function () {
       y: 50,
       opacity: 0,
       duration: 1.2,
-      ease: "elastic.out(1, 0.5)"
+      ease: "elastic.out(1, 0.5)",
     })
     .from(".particle", {
       opacity: 0,
       duration: 1,
       ease: "power3.out",
-      stagger: 0.2
+      stagger: 0.2,
     })
     .from(
       ".mini-text",
@@ -168,7 +169,7 @@ window.addEventListener("load", function () {
         x: "-100%",
         opacity: 0,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       },
       "<"
     );
@@ -183,8 +184,8 @@ window.addEventListener("load", function () {
         trigger: ".sc-intro",
         start: "top top",
         end: "bottom top",
-        scrub: 1.5
-      }
+        scrub: 1.5,
+      },
     });
   });
 
@@ -194,14 +195,14 @@ window.addEventListener("load", function () {
     duration: 0.6, // 더 부드럽게 움직이도록 조정
     ease: "power1.inOut",
     yoyo: true,
-    repeat: -1 // 무한 반복
+    repeat: -1, // 무한 반복
   });
 
   // .sc-about 섹션을 트리거로 하는 gsap 타임라인 설정
   gsap.timeline({
     scrollTrigger: {
       trigger: ".sc-about",
-      pin: true,
+      pin: this.window.innerWidth >= 1280 ? true : false,
       // .sc-about 섹션에 도달하면 header에 active 클래스 추가
       onEnter() {
         header.classList.add("active");
@@ -209,81 +210,84 @@ window.addEventListener("load", function () {
       // .sc-about 섹션을 벗어나면 header에서 active 클래스 제거
       onLeaveBack() {
         header.classList.remove("active");
-      }
-    }
+      },
+    },
   });
 
-  // .icon1 요소의 애니메이션 설정
-  gsap.fromTo(
-    ".icon1",
-    {
-      y: 200
-    },
-    {
-      y: -2000,
-      duration: 0.7,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".sc-about",
-        start: "top 30%",
-        scrub: true
+  // 1280px 이상에서만 실행
+  if (window.innerWidth >= 1280) {
+    // .icon1 요소의 애니메이션 설정
+    gsap.fromTo(
+      ".icon1",
+      {
+        y: 200,
+      },
+      {
+        y: -2000,
+        duration: 0.7,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".sc-about",
+          start: "top 30%",
+          scrub: true,
+        },
       }
-    }
-  );
+    );
 
-  // .icon2 요소의 애니메이션 설정
-  gsap.fromTo(
-    ".icon2",
-    {
-      y: 2000
-    },
-    {
-      y: -2000,
-      duration: 0.7,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".sc-about",
-        start: "top 30%",
-        scrub: true
+    // .icon2 요소의 애니메이션 설정
+    gsap.fromTo(
+      ".icon2",
+      {
+        y: 2000,
+      },
+      {
+        y: -2000,
+        duration: 0.7,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".sc-about",
+          start: "top 30%",
+          scrub: true,
+        },
       }
-    }
-  );
+    );
 
-  // .icon3 요소의 애니메이션 설정
-  gsap.fromTo(
-    ".icon3",
-    {
-      y: 4000
-    },
-    {
-      y: -1000,
-      duration: 0.7,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".sc-about",
-        start: "top top",
-        scrub: true
+    // .icon3 요소의 애니메이션 설정
+    gsap.fromTo(
+      ".icon3",
+      {
+        y: 4000,
+      },
+      {
+        y: -1000,
+        duration: 0.7,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".sc-about",
+          start: "top top",
+          scrub: true,
+        },
       }
-    }
-  );
+    );
 
-  // .icon4 요소의 애니메이션 설정
-  gsap.fromTo(
-    ".icon4",
-    {
-      y: 4000
-    },
-    {
-      y: -300,
-      duration: 0.7,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".sc-about",
-        start: "top top",
-        scrub: true
+    // .icon4 요소의 애니메이션 설정
+    gsap.fromTo(
+      ".icon4",
+      {
+        y: 4000,
+      },
+      {
+        y: -300,
+        duration: 0.7,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".sc-about",
+          start: "top top",
+          scrub: true,
+        },
       }
-    }
-  );
+    );
+  }
 
   // .skills_wrap 요소의 애니메이션 설정
   // 1280px 이상에서만 실행
@@ -291,7 +295,7 @@ window.addEventListener("load", function () {
     gsap.fromTo(
       ".skills_wrap",
       {
-        xPercent: 100
+        xPercent: 100,
       },
       {
         xPercent: 0,
@@ -300,8 +304,8 @@ window.addEventListener("load", function () {
           pin: true,
           scrub: true,
           start: "top top",
-          end: "+=1000"
-        }
+          end: "+=1000",
+        },
       }
     );
   }
@@ -311,25 +315,25 @@ window.addEventListener("load", function () {
     scrollTrigger: {
       trigger: ".sc-about",
       start: "top 50%",
-      toggleActions: "play none none reverse"
+      toggleActions: "play none none reverse",
     },
     y: 50,
     opacity: 0,
     duration: 1,
-    ease: "power3.out"
+    ease: "power3.out",
   });
 
   gsap.from(".sc-about .title p", {
     scrollTrigger: {
       trigger: ".sc-about",
       start: "top 50%",
-      toggleActions: "play none none reverse"
+      toggleActions: "play none none reverse",
     },
     y: 50,
     opacity: 0,
     duration: 1,
     delay: 0.3,
-    ease: "power3.out"
+    ease: "power3.out",
   });
 
   // 스킬 섹션 타이틀 애니메이션 설정
@@ -337,12 +341,12 @@ window.addEventListener("load", function () {
     scrollTrigger: {
       trigger: ".sc-skills",
       start: "top 60%",
-      toggleActions: "play none none reverse"
+      toggleActions: "play none none reverse",
     },
     y: 50,
     opacity: 0,
     duration: 1,
-    ease: "power3.out"
+    ease: "power3.out",
   });
 
   // 프로젝트 섹션 스크립트
@@ -359,17 +363,17 @@ window.addEventListener("load", function () {
         scrub: true,
         pin: true,
         start: "top top",
-        end: "+=" + contentsHeight
-      }
+        end: "+=" + contentsHeight,
+      },
     });
 
     projectTl.fromTo(
       ".pj_wrapper",
       {
-        y: 400
+        y: 400,
       },
       {
-        y: -contentsHeight
+        y: -contentsHeight,
       }
     );
 
@@ -377,7 +381,7 @@ window.addEventListener("load", function () {
     gsap.fromTo(
       ".project-star-icon",
       {
-        y: 400
+        y: 400,
       },
       {
         y: -deviceHeight / 4,
@@ -386,10 +390,23 @@ window.addEventListener("load", function () {
         scrollTrigger: {
           trigger: ".pj_wrapper",
           start: "top top",
-          scrub: true
-        }
+          scrub: true,
+        },
       }
     );
+  });
+
+  // 스킬 섹션 타이틀 애니메이션 설정
+  gsap.from(".project_tit .project_text", {
+    scrollTrigger: {
+      trigger: ".projects",
+      start: "top 60%",
+      toggleActions: "play none none reverse",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
   });
 
   // ALL PROJECT 호버 이벤트: 이미지 바꾸기
@@ -437,12 +454,12 @@ window.addEventListener("load", function () {
     scrollTrigger: {
       trigger: ".open-source",
       start: "top 80%",
-      toggleActions: "play none none reverse"
+      toggleActions: "play none none reverse",
     },
     y: 50,
     opacity: 0,
     duration: 1,
-    ease: "power3.out"
+    ease: "power3.out",
   });
 
   // 메인 컨택트 섹션의 텍스트를 개별 문자로 나누어 애니메이션을 적용
@@ -476,10 +493,10 @@ window.addEventListener("load", function () {
         start: "top 80%",
         end: "top 20%",
         scrub: true,
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
       },
       stagger: 0.08,
-      ease: "elastic.out(1, 0.3)"
+      ease: "elastic.out(1, 0.3)",
     }
   );
 
@@ -495,17 +512,18 @@ window.addEventListener("load", function () {
       scrollTrigger: {
         trigger: ".main-contact",
         start: "top 40%",
-        toggleActions: "play none none reverse"
-      }
+        toggleActions: "play none none reverse",
+      },
     }
   );
   // 버튼
   let topButton = document.getElementById("topButton");
 
- // 사용자가 문서의 맨 위에서 20px 아래로 스크롤하면 버튼을 표시
+  // 사용자가 문서의 맨 위에서 20px 아래로 스크롤하면 버튼을 표시
   window.onscroll = function () {
     if (
-      (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) &&
+      (document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20) &&
       !(window.innerWidth < 1280)
     ) {
       topButton.style.display = "block";
@@ -514,7 +532,7 @@ window.addEventListener("load", function () {
     }
   };
 
- // 사용자가 버튼을 클릭하면 문서의 맨 위로 스크롤
+  // 사용자가 버튼을 클릭하면 문서의 맨 위로 스크롤
   topButton.onclick = function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -597,4 +615,31 @@ window.addEventListener("load", function () {
       });
     }
   });
+
+  // about 섹션 이미지 숨기기
+  const aboutImages = Array.from(document.querySelectorAll(".specs > div"));
+  const visibleImages = aboutImages.filter(
+    (_, index) => index === 0 || index === 2
+  );
+
+  if (this.window.innerWidth < 1280) {
+    aboutImages.forEach((image) => {
+      image.style.display = "none";
+    });
+    visibleImages.forEach((image, index) => {
+      image.style.display = "block";
+      if (index === 0) {
+        image.style.top = "21%";
+      } else if (index === 1) {
+        image.style.top = "79%";
+      }
+    });
+  } else {
+    aboutImages.forEach((image) => {
+      image.style.display = "block";
+    });
+    visibleImages.forEach((image) => {
+      image.style.display = "block";
+    });
+  }
 });

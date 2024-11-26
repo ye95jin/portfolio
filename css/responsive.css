@@ -22,6 +22,10 @@
   }
 
   /* intro */
+  .sc-intro {
+    height: 100dvh;
+  }
+
   .sc-intro .text-box {
     width: 100%;
     text-align: center;
@@ -57,11 +61,11 @@
   }
 
   .sc-intro::before {
-    right: -200px;
+    right: -30px;
   }
 
   .sc-intro .img-box {
-    right: -35%;
+    right: -72%;
     width: 440px;
     bottom: -5%;
   }
@@ -71,16 +75,21 @@
   }
 
   /* about */
+  .sc-about {
+    height: 100dvh;
+  }
+
   .sc-about .sc-about-icon {
     width: 40px;
   }
 
   .sc-about .title h2 {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 
   .sc-about .title p {
-    font-size: 0.48em;
+    font-size: 0.94em;
+    word-break: keep-all;
   }
 
   .sc-about .specs .icon1 {
@@ -106,6 +115,7 @@
   .sc-about::after {
     width: 260%;
     left: -475px;
+    bottom: -598px;
   }
 
   /* skills */
@@ -186,7 +196,7 @@
     transform: none;
   }
   .projects .project_tit .project-icon {
-    width: 40px;
+    display: none;
   }
   .projects .project_tit .project_text {
     font-size: 2.5em;
@@ -224,10 +234,8 @@
   .projects .pj_wrapper .pj_box ul {
     padding-top: 20px;
     display: flex;
-    flex-wrap: nowrap;
     gap: 1;
-    font-size: 0.1em;
-    /* line-height: 1.14; */
+    font-size: 0.75em;
   }
 
   .projects .pj_wrapper .pj_box p {
@@ -237,8 +245,9 @@
   }
 
   .projects .pj_wrapper .pj_box span {
-    font-size: 0.3em;
+    font-size: 0.875em;
     padding-bottom: 20px;
+    word-break: keep-all;
   }
 
   .pj_box.pj_box.pj_box:nth-child(2n)::before {
@@ -290,7 +299,7 @@
   .main-contact {
     max-width: 100%;
     height: 100%;
-    margin: 0 0 330px 0;
+    margin: 0 0 290px 0;
     padding: 0;
   }
   .main-contact .tit {
@@ -310,12 +319,21 @@
     z-index: 2;
     width: 60px;
     height: 60px;
-    background: url("../images/cotact-icon.png") no-repeat center center / cover;
+    background: url("../images/contact-icon.webp") no-repeat center center /
+      cover;
+  }
+
+  .main-contact::after {
+    bottom: -515px;
+    left: -221px;
+    rotate: 90deg;
+    width: 179%;
+    height: 471%;
   }
 
   /* footer */
   .footer {
-    margin: 0 0 70px 0;
+    margin-bottom: 30px;
     padding: 0 20px;
   }
   .footer .ft-wrap {
@@ -337,6 +355,7 @@
   .footer .ft-wrap .ft-info p {
     line-height: 160%;
     margin: 0;
+    font-size: 0.75em;
   }
   .footer .ft-wrap .ft-info span + span {
     margin: 0;
@@ -346,9 +365,9 @@
   }
 
   /* menu-overlay */
-  
+
   .menu-overlay ul li a {
-	font-size: 1.4em;
+    font-size: 1.4em;
   }
 }
 
@@ -624,11 +643,11 @@
     margin: 24px 0 0 0;
   }
 
-    /* menu-overlay */
-  
-	.menu-overlay ul li a {
-		font-size: 2.1em;
-	  }
+  /* menu-overlay */
+
+  .menu-overlay ul li a {
+    font-size: 2.1em;
+  }
 }
 
 /* 큰 태블릿 / 작은 데스크탑 (768px ~ 1024px) */
@@ -734,13 +753,13 @@
   }
 
   .sc-about .specs .icon4 {
-	right: 0vw;
+    right: 0vw;
     width: 230px;
   }
 
   .sc-about::after {
     width: 122%;
-}
+  }
 
   /* skills */
   .sc-skills {
@@ -767,7 +786,7 @@
   .sc-skills .skills_inner .skills_wrap ul li {
     width: 100%;
     padding: 0;
-	height: 457px;
+    height: 457px;
   }
   .post-module {
     display: flex;
@@ -838,15 +857,15 @@
 
   .projects .pj_wrapper .pj_box ul {
     padding-top: 20px;
-}
+  }
 
-.projects .pj_wrapper .pj_box p {
+  .projects .pj_wrapper .pj_box p {
     margin: 10px 0 10px;
-}
+  }
 
-.projects .pj_wrapper .pj_box span {
+  .projects .pj_wrapper .pj_box span {
     padding-bottom: 20px;
-}
+  }
 
   /* open-source */
   .swiper-slide.card {
@@ -858,7 +877,7 @@
     top: 89px;
     left: 25px;
     width: 120px;
-}
+  }
 
   /* contact */
   .main-contact {
@@ -986,7 +1005,7 @@
   .sc-skills .skills_inner .skills_wrap ul li {
     width: 100%;
     padding: 0;
-	height: 495px;
+    height: 495px;
   }
   .post-module {
     display: flex;
