@@ -84,12 +84,14 @@ window.addEventListener("DOMContentLoaded", () => {
 	setupTextAnimation();
   
 	window.addEventListener("resize", () => {
-	  gsap.set(".line_text .letter", { clearProps: "all" });
-	  gsap.set("p div:not([data-char='.'])", { clearProps: "all" });
-	  gsap.set(".main-text", { clearProps: "all" });
-	  gsap.set(".mini-text", { clearProps: "all" });
-  
-	  setupTextAnimation();
-	});
+		if (window.innerWidth >= 1280) {
+		  gsap.set(".line_text .letter", { clearProps: "all" });
+		  gsap.set("p div:not([data-char='.'])", { clearProps: "all" });
+		  gsap.set(".main-text", { clearProps: "all" });
+		  gsap.set(".mini-text", { clearProps: "all" });
+	  
+		  setupTextAnimation();
+		}
+	  });
   });
   

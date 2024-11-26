@@ -609,13 +609,7 @@
     text-align: center;
   }
 
-  /* footer */
-  /* .footer {
-    padding: 0 20px;
-  }
-  .footer .ft-wrap {
-    width: 100%;
-  } */
+
   /* footer */
   .footer {
     margin: 0 0 70px 0;
@@ -897,11 +891,11 @@
   }
 
   .main-contact .contact-icon {
-    top: 60%;
-    left: 50%;
-    width: 120px;
-    height: 100px;
-  }
+	top: 57%;
+	left: 50%;
+	width: 100px;
+	height: 90px;
+}
 }
 
 /* 작은 데스크탑 (1025px ~ 1279px) */
