@@ -1085,6 +1085,7 @@ body._hidden,
 .footer .ft-wrap .ft-info p {
   margin: 5px 0;
 }
+
 .footer .ft-wrap .ft-info p.copy {
   margin-top: 30px;
 }
@@ -1117,6 +1118,7 @@ body._hidden,
   margin-left: 20px;
   color: #999;
 }
+
 
 /* Skills 카드 */
 .post-module {

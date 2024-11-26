@@ -641,6 +641,10 @@
     margin: 24px 0 0 0;
   }
 
+  .footer .ft-wrap .ft-info p.ft-mobile {
+	display: block;
+}
+
   /* menu-overlay */
 
   .menu-overlay ul li a {
