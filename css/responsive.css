@@ -62,8 +62,9 @@
 
   .sc-intro::before {
     right: -30px;
-	top: 0px;
-
+	top: -194px;
+	width: 112%;
+    height: 154%;
   }
 
   .sc-intro .img-box {
