@@ -51,41 +51,46 @@
 ## 🔍 주요 프로젝트  
 
 1. **Wylie 리뉴얼**  
-   - **기술 스택:** React, Sass  
+   - **기술 스택:** React, Axios, Tailwind CSS  
    - **주요 기능:**  
-     - 정적 JSON 데이터를 로딩하여 프로젝트 페이지를 랜더링.  
-     - 클래스 컴포넌트를 사용해 게시판 기능 일부 구현.  
-     - Sass의 Nesting 및 Mixin 기능을 활용한 효율적인 스타일 관리.  
+     - Axios를 이용해 외부 데이터를 로드하여 프로젝트 페이지를 렌더링.  
+     - Contact 카테고리에서 데이터를 입력하고 서버로 전송하는 기능 구현.
+     - Tailwind CSS를 활용한 효율적인 스타일링.  
 
 2. **O'kichen 리뉴얼**  
-   - **기술 스택:** React, Fetch API, Styled Components  
+   - **기술 스택:** PWA, SwiperJS, JavaScript  
    - **주요 기능:**  
-     - Fetch API를 이용해 동적 상품 데이터를 렌더링.  
-     - 지역번호 컴포넌트를 활용해 동적 렌더링 구현.  
-     - Styled Components를 활용하여 컴포넌트 기반의 UI 디자인.  
+     - PWA(Progressive Web App)로 설치 가능한 웹 애플리케이션 개발.  
+     - SwiperJS를 활용해 컨텐츠 탐색 슬라이더 구현.  
+     - 검색 버튼으로 검색 화면 이동 및 '더보기' 버튼으로 상세 페이지로 전환.  
+	 - 페이지별로 다른 헤더 디자인과 기능 구현.
 
 3. **ArtCenter Nabi 리뉴얼**  
-   - **기술 스택:** React, Sass  
+   - **기술 스택:** React, Redux, Axios 
    - **주요 기능:**  
-     - React를 기반으로 컴포넌트 중심의 웹 애플리케이션 개발.  
-     - 정적 JSON 데이터를 로딩하여 상품 페이지를 구현.  
-     - Sass를 활용한 반응형 디자인과 스타일 관리.  
+     - Redux를 활용하여 상태를 효율적으로 관리.  
+     - 첫 페이지에서 한 주간 인기 있는 갤러리 TOP 10 데이터를 랜덤으로 표시.  
+     - 유저가 선택한 장르에 따라 데이터를 받아오는 '더보기' 페이지 구현.  
 
 4. **WConcept 리뉴얼**  
-   - **기술 스택:** HTML, CSS, Tailwind CSS, JavaScript, SwiperJS  
+   - **기술 스택:** React, Redux, JavaScript 
    - **주요 기능:**  
-     - SwiperJS를 사용해 다이나믹한 슬라이더 구성.  
-     - User-Agent API를 활용해 모바일 디바이스에 최적화된 로직 구현.  
-     - Tailwind CSS를 활용하여 빠르고 간결한 스타일링.  
+     - 반응형 웹사이트로 메인 및 서브 슬라이더 제어 기능 구현. 
+     - 카테고리별로 콘텐츠 필터링 가능. 
+     - 푸터의 체크박스를 커스텀하여 데이터를 입력받는 기능 추가.
 
 ---
 
 ## 📌 기술 스택  
 
 - **Frontend:**  
-  HTML5, CSS3, JavaScript(ES6+), React, Sass, Tailwind CSS  
+  HTML5, CSS3, JavaScript(ES6+), React, Redux, Axios, Sass, Tailwind CSS
+- **UI/UX:** 
+  SwiperJS, Styled Components
 - **Animation:**  
   GSAP, ScrollTrigger  
+- **Progressive Web App (PWA)::**  
+  Service Workers, Manifest  
 - **Collaboration:**  
   Git & GitHub  
 
@@ -93,6 +98,6 @@
 
 ## 📫 연락처  
 
-- **GitHub:** [https://github.com/yejin95](https://github.com/yejin95)  
-- **Notion:** [https://notion.so/yejin95](https://notion.so/yejin95)  
+- **GitHub:** [https://github.com/ye95jin](https://github.com/ye95jin)  
+- **Notion:** [https://mellow-atom-120.notion.site/Front-end-Portfolio-11f50b55556880b0b723eb218a4effbb](https://mellow-atom-120.notion.site/Front-end-Portfolio-11f50b55556880b0b723eb218a4effbb)  
 - **Email:** [ye95jin@naver.com](mailto:ye95jin@naver.com)  
