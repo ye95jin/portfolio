@@ -79,10 +79,10 @@ body {
 }
 
 #header .hd-wrap .hd-left .hd-logo {
-  display: block;
-  width: 120px;
-  height: auto;
-}
+	display: block;
+	width: 120px;
+	height: auto; 
+  }
 
 #start header .gnb-wrap {
   display: block;
@@ -157,11 +157,12 @@ body {
   background-color: #6c6c6c;
 }
 
-/* 메뉴 활성화 중 hd-info 링크 기본 상태 */
-.menu-overlay.active ~ #header .hd-wrap .hd-info a {
-  background-color: #6c6c6c;
-  color: #fff;
-}
+  /* 메뉴 활성화 중 hd-info 링크 기본 상태 */
+  .menu-overlay.active ~ #header .hd-wrap .hd-info a {
+	background-color: #6c6c6c;
+	color: #fff; 
+  }
+
 
 /* main - cc-intro */
 .sc-intro {
@@ -180,7 +181,7 @@ body {
 .sc-intro::before {
   content: "";
   position: absolute;
-  top: -400px;
+  top: -300px;
   right: -1200px;
   width: 100%;
   height: 100%;
@@ -188,6 +189,7 @@ body {
   background-repeat: no-repeat;
   opacity: 0.4;
   pointer-events: none;
+  overflow: visible;
 }
 
 .sc-intro .text-box {
@@ -832,7 +834,8 @@ body._hidden,
   color: whitesmoke;
   background-color: whitesmoke;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
-    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 16px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 320px) {
   .swiper-slide.card {
@@ -927,7 +930,7 @@ body._hidden,
   outline: 1px dashed yellow;
   outline-offset: 3px;
 }
-@media (min-width: 320px) {
+@media (hover: hover) and (min-width: 320px) {
   .swiper-slide.card:after {
     transform: translateY(0);
   }
@@ -1034,7 +1037,7 @@ body._hidden,
   z-index: 2;
   width: 160px;
   height: 130px;
-  background: url("../images/contact-icon.webp") no-repeat center center / cover;
+  background: url("../images/cotact-icon.webp") no-repeat center center / cover;
 }
 
 /* .footer */
@@ -1314,75 +1317,76 @@ body._hidden,
 
 /* 풀스크린 메뉴 스타일 */
 .menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgb(9 12 16 / 88%);
-  display: none; /* 초기에는 숨김 */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.menu-overlay.active {
-  display: flex;
-}
-
-.menu-overlay ul {
-  list-style: none;
-  text-align: center;
-}
-
-.menu-overlay ul li {
-  margin: 20px 0;
-}
-
-.menu-overlay ul li a {
-  font-size: 3em;
-  display: block;
-  color: rgba(255, 255, 255, 0.7); /* 반투명 흰색 */
-  text-decoration: none;
-  transition: color 0.3s;
-  padding: 10px 0 10px 0;
-}
-
-.menu-overlay ul li a:hover {
-  color: #fff; /* 호버 시 완전 흰색 */
-}
-
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+    height: 100vh;
+    background: rgb(9 12 16 / 88%);
+	display: none; /* 초기에는 숨김 */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+  }
+  
+  .menu-overlay.active {
+	display: flex;
+  }
+  
+  .menu-overlay ul {
+	list-style: none;
+	text-align: center;
+  }
+  
+  .menu-overlay ul li {
+	margin: 20px 0;
+  }
+  
+  .menu-overlay ul li a {
+	font-size: 3em;
+	display: block;
+	color: rgba(255, 255, 255, 0.7); /* 반투명 흰색 */
+	text-decoration: none;
+	transition: color 0.3s;
+	padding: 10px 0 10px 0;
+  }
+  
+  .menu-overlay ul li a:hover {
+	color: #fff; /* 호버 시 완전 흰색 */
+  }
+  
 /* 햄버거 버튼 기본 스타일 */
 .btn-allmenu {
-  position: relative;
-  z-index: 10000; /* 버튼이 메뉴 위에 오도록 설정 */
-  cursor: pointer;
+    position: relative;
+    z-index: 10000; /* 버튼이 메뉴 위에 오도록 설정 */
+    cursor: pointer;
 }
+
 
 /* 햄버거 버튼의 X 모양 전환 */
 
 #header .hd-wrap .btn-allmenu.open span {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
 
 .btn-allmenu.open span:first-child {
-  transform: rotate(45deg) translate(5px, 5px);
-  position: relative;
+    transform: rotate(45deg) translate(5px, 5px);
+    position: relative;
 }
 
 .btn-allmenu.open span:nth-child(2) {
-  transform: rotate(-45deg) translate(5px, -5px);
-  position: relative;
+    transform: rotate(-45deg) translate(5px, -5px);
+    position: relative;
 }
 
 /* 추가: 메뉴 열렸을 때의 배경 보정 */
 .menu-overlay.active {
-  z-index: 9999;
+    z-index: 9999;
 }
 
 /* 스크롤 금지 */
 .no-scroll {
-  overflow: hidden;
-  height: 100vh;
-}
+	overflow: hidden;
+	height: 100vh;
+  }

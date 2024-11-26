@@ -62,12 +62,14 @@
 
   .sc-intro::before {
     right: -30px;
+	top: 0px;
+
   }
 
   .sc-intro .img-box {
     right: -72%;
-    width: 440px;
-    bottom: -5%;
+    width: 400px;
+    bottom: -10%;
   }
 
   .scroll-container {
