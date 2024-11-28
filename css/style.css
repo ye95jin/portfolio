@@ -907,8 +907,10 @@ body._hidden,
   line-height: 1.2;
 }
 .swiper-slide.card .copy {
-  font-size: 1.125rem;
-  line-height: 1.35;
+  font-size: 1.06em;
+  line-height: 2;
+  word-break: keep-all;
+  font-family: "helvetica-bold", sans-serif;
 }
 .swiper-slide.card .btn {
   cursor: pointer;
@@ -924,13 +926,13 @@ body._hidden,
 }
 .swiper-slide.card .btn:hover {
   color: #fff;
-  background-color: #000;
+  background-color: #737373;
 }
 .swiper-slide.card .btn:focus {
   outline: 1px dashed yellow;
   outline-offset: 3px;
 }
-@media (min-width: 320px) {
+@media (hover: hover) and (min-width: 320px) {
   .swiper-slide.card:after {
     transform: translateY(0);
   }
