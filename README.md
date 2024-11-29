@@ -81,6 +81,36 @@
 
 ---
 
+## **OPEN-SOURCE**
+
+이 섹션은 React와 JavaScript를 활용하여 개발한 오픈소스 프로젝트들을 소개합니다.  
+각 프로젝트는 다양한 기능과 기술 스택을 활용해 프론트엔드 개발 역량을 증명합니다.
+
+### 주요 오픈소스 프로젝트
+
+1. **React와 Fetch API로 비동기 데이터 처리 및 로딩 상태 구현**  
+   - [View More](https://open-source1-one.vercel.app/)
+
+2. **Redux를 활용한 상태 관리 및 데이터 흐름 구현**  
+   - [View More](https://open-source4-three.vercel.app/)
+
+3. **Fetch API와 map() 함수로 GNB HTML 생성**  
+   - [View More](https://open-source9-alpha.vercel.app/)
+
+4. **Fetch API와 map() 함수로 GNB HTML 생성 (또 다른 버전)**  
+   - [View More](https://open-source10-sigma.vercel.app/)
+
+5. **useState와 useEffect로 반응형 HTML 렌더링 및 Fetch API 활용**  
+   - [View More](https://open-source13.vercel.app/)
+
+6. **React 기반 '더보기' 버튼으로 데이터 개수 동적 조절**  
+   - [View More](https://open-source14.vercel.app/)
+
+7. **React Hook과 sort()로 데이터 정렬 및 사용자 맞춤 기능 구현**  
+   - [View More](https://open-source15.vercel.app/)
+
+---
+
 ## 📌 기술 스택  
 
 - **Frontend:**  
