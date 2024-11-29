@@ -964,6 +964,12 @@
     margin: 0;
   }
 
+  .open-source::before {
+	top: 41px;
+	left: 27px;
+	width: 90px;
+	height: 90px;
+  }
   /* main-contact */
   .main-contact {
     max-width: 100%;

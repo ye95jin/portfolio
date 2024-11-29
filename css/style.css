@@ -525,13 +525,14 @@ body {
 }
 .projects .pj_wrapper .pj_box > a {
   display: block;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
 }
 .projects .pj_wrapper .pj_box .pj_thumb {
   /* margin-bottom: 40px; */
   overflow: hidden;
-  border: 1px solid #000;
   box-sizing: border-box;
   border-bottom: none;
+
 }
 .projects .pj_wrapper .pj_box .pj_thumb img {
   width: 100%;
@@ -549,7 +550,6 @@ body {
 .pj_tex_box {
   background-color: #fff;
   padding: 0 20px;
-  border: 1px solid #000;
   box-sizing: border-box;
   border-top: none;
 }
@@ -822,20 +822,30 @@ body._hidden,
 .open-source .swiper .swiper-wrapper {
   height: auto;
 }
-/* 오픈소스 카드 스타일 */
+/* 카드 슬라이드 */
 .swiper-slide.card {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  padding: 1rem;
-  width: 100%;
-  text-align: center;
-  color: whitesmoke;
-  background-color: whitesmoke;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
-    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
-    0 16px 16px rgba(0, 0, 0, 0.1);
+	position: relative;
+	display: flex;
+	justify-content: center; /* 가로 중앙 정렬 */
+	align-items: center; /* 세로 중앙 정렬 */
+	overflow: hidden;
+	padding: 1rem;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 1px 1px rgba(82, 82, 82, 0.1), 0 2px 2px rgba(105, 104, 104, 0.1),
+	  0 4px 4px rgba(75, 75, 75, 0.1), 0 8px 8px rgba(69, 69, 69, 0.1),
+	  0 16px 16px rgba(0, 0, 0, 0.1);
+	  width: 100%; /* 가로 크기 */
+	  height: 100%; /* 높이 설정 */
+	  box-sizing: border-box;
+  }
+
+  .swiper-slide.card img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* 부모 요소를 채우도록 설정 */
 }
 @media (min-width: 320px) {
   .swiper-slide.card {
@@ -848,7 +858,7 @@ body._hidden,
   top: 0;
   left: 0;
   width: 100%;
-  height: 110%;
+  height: 100%;
   background-size: cover;
   background-position: 0 0;
   transition: transform calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
@@ -907,6 +917,7 @@ body._hidden,
   line-height: 1.2;
 }
 .swiper-slide.card .copy {
+	color: #fff;
   font-size: 1.06em;
   line-height: 2;
   word-break: keep-all;
@@ -925,8 +936,8 @@ body._hidden,
   border: none;
 }
 .swiper-slide.card .btn:hover {
-  color: #fff;
-  background-color: #737373;
+  color: #474747;
+  background-color: #ffffff;
 }
 .swiper-slide.card .btn:focus {
   outline: 1px dashed yellow;
@@ -974,6 +985,7 @@ body._hidden,
     transition-duration: 0s;
   }
 }
+
 
 /* .main-contact */
 .main-contact {

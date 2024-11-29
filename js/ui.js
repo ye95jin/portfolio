@@ -33,12 +33,16 @@ const ui = {
       }
     });
 
-    function setSlideBackgrounds() {
-      document.querySelectorAll(".swiper-slide.card").forEach((card, index) => {
-        const imageUrl = `../images/open-source/project${(index % 5) + 1}.png`;
-        card.style.setProperty("--background-image", `url(${imageUrl})`);
-      });
-    }
+	function setSlideBackgrounds() {
+		document.querySelectorAll(".swiper-slide.card").forEach((card, index) => {
+		  const imageUrl = `../images/open-source/project${(index % 7) + 1}.png`;
+		  // 이미지 강제 중앙 정렬
+		  card.style.display = "flex";
+		  card.style.justifyContent = "center";
+		  card.style.alignItems = "center";
+		  card.style.background = `url(${imageUrl}) center center / cover no-repeat`;
+		});
+	  }
 
     setSlideBackgrounds();
   }
